@@ -16,6 +16,14 @@
         "url": "https://github.com/vsnthdev/twitter-banner.git"
     },
     "scripts": {},
-    "dependencies": {},
-    "devDependencies": {}
+    "devDependencies": {
+        "@babel/core": "^7.16.5",
+        "@babel/eslint-parser": "^7.16.5",
+        "@babel/plugin-syntax-top-level-await": "^7.14.5",
+        "eslint": "^8.5.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-simple-import-sort": "^7.0.0",
+        "prettier": "^2.5.1"
+    }
 }
