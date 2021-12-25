@@ -3,13 +3,9 @@
  *  Created On 25 December 2021
  */
 
-import dotenv from 'dotenv'
 import { TwitterClient } from 'twitter-api-client'
 
-export default async env => {
-    // load the .env file
-    if (env == 'development') dotenv.config()
-
+export default async () => {
     // grab the required variables from the environment
     const {
         NO_FOLLOWERS,
