@@ -11,7 +11,7 @@ import path from 'path'
 export default async page => {
     const { BACKGROUND_IMAGE } = process.env
 
-    // here we use file-url library to convert the platform specific
+    // construct the file path of the background image file
     const bgPath = path.join(dirname(), '..', 'data', BACKGROUND_IMAGE)
     const ext = path.parse(bgPath).ext.replace('jpg', 'jpeg').substring(1)
 

@@ -8,6 +8,7 @@ import getFollowerImages from './01-getFollowerImages.js'
 import browser from './02-browser.js'
 import injectBackgroundImage from './03-backgroundImage.js'
 import injectImages from './04-images.js'
+import injectStyles from './05-styles.js'
 
 const env = process.env.NODE_ENV || 'development'
 
@@ -25,6 +26,9 @@ await injectBackgroundImage(page)
 
 // inject images into our document
 await injectImages(page, images)
+
+// inject the styles into our document
+await injectStyles(page)
 
 // 6. take a screenshot
 // 7. upload it on Twitter

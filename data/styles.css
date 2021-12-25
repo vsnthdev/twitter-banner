@@ -1,0 +1,19 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#images {
+    display: flex;
+}
+
+#images img {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    margin: 0px 0.5rem 0px 0.5rem;
+    border: 2px solid #ffffff;
+}
