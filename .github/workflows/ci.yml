@@ -12,6 +12,7 @@ jobs:
           with:
             node-version: '17'
           env:
+            NODE_ENV: production
             BACKGROUND_IMAGE: ${{ secrets.BACKGROUND_IMAGE }}
             STYLESHEET_NAME: ${{ secrets.STYLESHEET_NAME }}
             NO_FOLLOWERS: ${{ secrets.NO_FOLLOWERS }}
