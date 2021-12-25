@@ -16,6 +16,7 @@
         "url": "https://github.com/vsnthdev/twitter-banner.git"
     },
     "dependencies": {
+        "@vsnthdev/utilities-node": "^2.0.1",
         "es-dirname": "^0.1.0",
         "puppeteer": "^13.0.1",
         "twitter-api-client": "^1.5.1"

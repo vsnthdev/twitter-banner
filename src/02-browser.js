@@ -5,9 +5,11 @@
 
 import puppeteer from 'puppeteer'
 
-export default async env => {
+export let browser
+
+export const start = async env => {
     // create a new browser instance
-    const browser = await puppeteer.launch({
+    browser = await puppeteer.launch({
         defaultViewport: {
             width: 1500,
             height: 500,
@@ -22,3 +24,5 @@ export default async env => {
     // by Chromium browser
     return page[0]
 }
+
+export const close = async () => await browser.close()
