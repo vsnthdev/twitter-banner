@@ -1,3 +1,7 @@
+:root {
+    --img-size: 40px;
+}
+
 body {
     padding: 0px;
     margin: 0px;
@@ -11,8 +15,8 @@ body {
 }
 
 #images img {
-    width: 40px;
-    height: 40px;
+    width: var(--img-size);
+    height: var(--img-size);
     border-radius: 999px;
     margin: 0px 0.5rem 0px 0.5rem;
     border: 3px solid white;
