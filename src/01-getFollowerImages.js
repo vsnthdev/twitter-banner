@@ -5,6 +5,8 @@
 
 import { TwitterClient } from 'twitter-api-client'
 
+export let twitter
+
 export default async () => {
     // grab the required variables from the environment
     const {
@@ -17,7 +19,7 @@ export default async () => {
     } = process.env
 
     // prepare an authenticated Twitter client
-    const twitterClient = new TwitterClient({
+    twitter = new TwitterClient({
         apiKey: TWITTER_API_KEY,
         apiSecret: TWITTER_API_SECRET,
         accessToken: TWITTER_ACCESS_TOKEN,
@@ -25,11 +27,10 @@ export default async () => {
     })
 
     // get the recent followers
-    const { users: allUsers } =
-        await twitterClient.accountsAndUsers.followersList({
-            screen_name: TWITTER_USERNAME,
-            count: Number(NO_FOLLOWERS) * 2,
-        })
+    const { users: allUsers } = await twitter.accountsAndUsers.followersList({
+        screen_name: TWITTER_USERNAME,
+        count: Number(NO_FOLLOWERS) * 2,
+    })
 
     return (
         allUsers
