@@ -30,7 +30,7 @@ await injectBackgroundImage(page)
 await injectImages(page, images)
 
 // inject the styles into our document
-await injectStyles(page)
+const tag = await injectStyles(page)
 
 // we just show these during development
 if (env == 'production') {
@@ -40,4 +40,10 @@ if (env == 'production') {
 
     // upload it on Twitter, if ran during production
     await publishBanner(twitter, banner)
+} else {
+    // dynamically import the dev js
+    const { default: dev } = await import('./dev.js')
+
+    // attach the css watcher functionality
+    await dev(tag)
 }

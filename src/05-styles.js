@@ -13,5 +13,5 @@ export default async page => {
     const stylesPath = path.join(dirname(), '..', 'data', STYLESHEET_NAME)
     const content = await fs.readFile(stylesPath, 'utf-8')
 
-    await page.addStyleTag({ content })
+    return await page.addStyleTag({ content })
 }
