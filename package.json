@@ -18,6 +18,10 @@
     "engines": {
         "node": ">=17.3.x"
     },
+    "scripts": {
+        "docs": "node scripts/docs/index.js",
+        "start": "node src/twitter-banner.js"
+    },
     "dependencies": {
         "@vsnthdev/utilities-node": "^2.0.1",
         "es-dirname": "^0.1.0",
