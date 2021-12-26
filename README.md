@@ -25,15 +25,15 @@
 
 | Variable | Description | Default Value |
 | -------- | ----------- | ------------- |
-| `BACKGROUND_IMAGE` | background image name | `background.png` |
-| `STYLESHEET_NAME` | the CSS filename | `styles.css` |
-| `NO_FOLLOWERS` | number of followers to get images of | `4` |
-| `TWITTER_USERNAME` | your Twitter username | `` |
-| `TWITTER_API_KEY` | Twitter API authentication details | `` |
-| `TWITTER_API_SECRET` |  | `` |
-| `TWITTER_ACCESS_TOKEN` |  | `` |
-| `TWITTER_TOKEN_SECRET` |  | `` |
-| `IMAGES_CONTAINER_ID` | the id of the div where images will be attached | `images` |
+| `BACKGROUND_IMAGE` | Background image name | `background.png` |
+| `STYLESHEET_NAME` | The CSS filename | `styles.css` |
+| `NO_FOLLOWERS` | Number of followers to get images of | `4` |
+| `TWITTER_USERNAME` | Your Twitter username |  |
+| `TWITTER_API_KEY` | Twitter API key from developer dashboard |  |
+| `TWITTER_API_SECRET` | Twitter API secret from developer dashboard |  |
+| `TWITTER_ACCESS_TOKEN` | Twitter API access token with read/write permissions |  |
+| `TWITTER_TOKEN_SECRET` | Twitter API token secret with read/write permissions |  |
+| `IMAGES_CONTAINER_ID` | ID of the div where images will be attached | `images` |
 
 ## 📰 License
 

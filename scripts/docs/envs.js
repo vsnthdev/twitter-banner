@@ -21,11 +21,15 @@ export default async () => {
         const comments = envs
             .slice(envs.indexOf(start), envs.indexOf(end))
             .join('\n')
+            .substring(2)
+
+        const key = end.split('=')[0]
+        const value = end.split('=')[1]
 
         properties.push(
-            `| \`${end.split('=')[0]}\` | ${comments.substring(2)} | \`${
-                end.split('=')[1]
-            }\` |`,
+            `| \`${key}\` | ${comments} | ${
+                value.length != 0 ? '`' + value + '`' : ''
+            } |`,
         )
 
         envs = envs.slice(envs.indexOf(end) + 1)
