@@ -26,7 +26,7 @@ Unlike my previous approach where I used Redis + Digital Ocean + Docker to updat
 
 You can easily have this project change your Twitter profile's cover image by following the below steps:
 
-1. Fork [this repository](https://github.com/vsnthdev/twitter-banner/fork?fragment=1)
+1. Fork [this repository](https://github.com/vsnthdev/twitter-banner/fork)
 2. Set the [below environment variables](#%EF%B8%8F-environment-variables) as repository secrets
 3. <a target="_blank" rel="noopener" href="https://user-images.githubusercontent.com/24322511/147423094-146aeeae-eeff-4ec3-8001-44d9adcad7bf.png">Enable workflows</a> on the forked repository
 4. Update the banner image at [`data/background.png`](https://github.com/vsnthdev/twitter-banner/blob/main/data/background.png)
