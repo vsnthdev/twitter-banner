@@ -17,18 +17,32 @@
             alt="Project commits">
     </a>
 </p>
-<br>
+
+Unlike my previous approach where I used Redis + Digital Ocean + Docker to update the Twitter profile banner, this approach does not need to be deployed separately & uses Github Actions instead. Read how it works for more information.
 
 > Tweet me <a target="_blank" rel="noopener" href="https://vas.cx/twitter">@vsnthdev</a>, I would love to know your opinion/experience on this project 😍
 
-# 🏕️ Environment Variables
+## ✨ Usage Guide
+
+You can easily have this project change your Twitter profile's cover image by following the below steps:
+
+1. Fork [this repository](https://github.com/vsnthdev/twitter-banner/fork?fragment=1)
+2. Set the [below environment variables](#%EF%B8%8F-environment-variables) as repository secrets
+3. <a target="_blank" rel="noopener" href="https://user-images.githubusercontent.com/24322511/147423094-146aeeae-eeff-4ec3-8001-44d9adcad7bf.png">Enable workflows</a> on the forked repository
+4. Update the banner image at [`data/background.png`](https://github.com/vsnthdev/twitter-banner/blob/main/data/background.png)
+5. Optionally update the stylesheet at [`data/styles.css`](https://github.com/vsnthdev/twitter-banner/blob/main/data/styles.css)
+6. Select the "Banner Update" workflow & click on "Run workflow"
+
+## 💡 How It Works
+
+## 🏕️ Environment Variables
 
 | Variable | Description | Default Value |
 | -------- | ----------- | ------------- |
 
 <!-- environment variables -->
 
-## 📰 License
+## 📋 License
 
 > The **twitter-banner** project is released under the [GPL v2](https://github.com/vsnthdev/twitter-banner/blob/main/LICENSE.md). <br> Developed &amp; maintained By Vasanth Srivatsa. Copyright <!-- year --> © Vasanth Developer.
 
