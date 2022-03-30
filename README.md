@@ -51,7 +51,7 @@ You can easily have this project change your Twitter profile's cover image by fo
 
 ## 📋 License
 
-> The **twitter-banner** project is released under the [GPL v2](https://github.com/vsnthdev/twitter-banner/blob/main/LICENSE.md). <br> Developed &amp; maintained By Vasanth Srivatsa. Copyright 2021 © Vasanth Developer.
+> The **twitter-banner** project is released under the [GPL v2](https://github.com/vsnthdev/twitter-banner/blob/main/LICENSE.md). <br> Developed &amp; maintained By Vasanth Srivatsa. Copyright 2022 © Vasanth Developer.
 
 <hr>
 
