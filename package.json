@@ -1,7 +1,7 @@
 {
     "name": "twitter-banner",
     "description": "Automatically 🤖 updates Twitter banner ⌚ every few minutes.",
-    "version": "0.0.1",
+    "version": "0.0.0",
     "license": "GPL-2.0-only",
     "type": "module",
     "homepage": "https://github.com/vsnthdev/twitter-banner#readme",
@@ -16,7 +16,7 @@
         "url": "https://github.com/vsnthdev/twitter-banner.git"
     },
     "engines": {
-        "node": ">=17.3.x"
+        "node": ">=18.7.x"
     },
     "scripts": {
         "docs": "node scripts/docs/index.js",
