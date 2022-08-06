@@ -5,6 +5,15 @@
 
 version: '3.8'
 services:
+    chrome:
+        image: zenika/alpine-chrome
+        container_name: chrome
+        restart: always
+        command: --no-sandbox --remote-debugging-address=0.0.0.0 --remote-debugging-port=9222 --disable-dev-shm-usage
+        volumes:
+            - /etc/timezone:/etc/timezone:ro
+            - /etc/localtime:/etc/localtime:ro
+
     twitter-banner:
         image: vsnthdev/twitter-banner:latest
         container_name: twitter-banner
@@ -16,6 +25,7 @@ services:
             BACKGROUND_IMAGE: background.png
             STYLESHEET_NAME: styles.css
             IMAGES_CONTAINER_ID: images
+            CHROME_DEVTOOLS_URL: 'http://chrome:9222'
             TWITTER_API_KEY: ''
             TWITTER_API_SECRET: ''
             TWITTER_ACCESS_TOKEN: ''
