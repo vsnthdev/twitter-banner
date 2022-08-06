@@ -1,0 +1,22 @@
+#
+#  Docker Compose example for deploying twitter-banner.
+#  Created On 06 August 2022
+#
+
+version: '3.8'
+services:
+    twitter-banner:
+        image: vsnthdev/twitter-banner:latest
+        container_name: twitter-banner
+        restart: always
+        environment:
+            TWITTER_USERNAME: vsnthdev
+            NO_FOLLOWERS: 5
+            UPDATE_INTERVAL: '*/8 * * * *'
+            BACKGROUND_IMAGE: background.png
+            STYLESHEET_NAME: styles.css
+            IMAGES_CONTAINER_ID: images
+            TWITTER_API_KEY: ''
+            TWITTER_API_SECRET: ''
+            TWITTER_ACCESS_TOKEN: ''
+            TWITTER_TOKEN_SECRET: ''

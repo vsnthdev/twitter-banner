@@ -20,7 +20,9 @@
     },
     "scripts": {
         "docs": "node scripts/docs/index.js",
-        "start": "node src/twitter-banner.js"
+        "start": "node src/twitter-banner.js",
+        "build": "docker build -t vsnthdev/twitter-banner:latest .",
+        "publish": "docker push vsnthdev/twitter-banner:latest"
     },
     "dependencies": {
         "@vsnthdev/utilities-node": "^2.0.1",
