@@ -1,5 +1,6 @@
 :root {
-    --img-size: 35px;
+    --img-size: 55px;
+    --img-spacing: 1rem;
 }
 
 body {
@@ -12,14 +13,14 @@ body {
 
 #images {
     display: flex;
-    margin-top: 8rem;
+    margin-top: 18rem;
 }
 
 #images img {
     width: var(--img-size);
     height: var(--img-size);
     border-radius: 999px;
-    margin: 0px 0.5rem 0px 0.5rem;
-    border: 3px solid white;
+    margin: 0px var(--img-spacing) 0px var(--img-spacing);
+    border: 5px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
 }
