@@ -3,7 +3,6 @@
  *  Created On 25 December 2021
  */
 
-import dotenv from 'dotenv'
 import { scheduleJob } from "node-schedule"
 
 import getFollowerImages, { twitter } from './01-getFollowerImages.js'
@@ -16,8 +15,11 @@ import publishBanner from './07-publish.js'
 
 const env = process.env.NODE_ENV || 'development'
 
-// load the .env file
-if (env == 'development') dotenv.config()
+// load the .env file during development
+if (env == 'development') {
+    const dotenv = await import('dotenv')
+    dotenv.config()
+}
 
 const main = async () => {
     // fetch images of the latest followers from Twitter's API
