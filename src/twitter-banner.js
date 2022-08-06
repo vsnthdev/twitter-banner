@@ -41,10 +41,11 @@ const main = async () => {
     if (env == 'production') {
         // take a screenshot & close the browser
         const banner = await takeScreenshot(page)
-        await close()
+        await close(page)
 
         // upload it on Twitter, if ran during production
         await publishBanner(twitter, banner)
+        console.log(`Changed banner artwork at ${new Date().toString()}`)
     } else {
         // dynamically import the dev js
         const { default: dev } = await import('./dev.js')

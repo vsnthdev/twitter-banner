@@ -3,26 +3,38 @@
  *  Created On 25 December 2021
  */
 
-import puppeteer from 'puppeteer'
+import puppeteer from 'puppeteer-core'
+import url from 'url'
+import dns from 'dns/promises'
 
 export let browser
 
-export const start = async env => {
-    // create a new browser instance
-    browser = await puppeteer.launch({
-        defaultViewport: {
-            width: 1500,
-            height: 500,
-        },
-        headless: env != 'development' ? true : false,
+// implementing this function because of
+// https://github.com/cyrus-and/chrome-remote-interface/issues/340
+const resolveIP = async (input) => {
+    const parsed = url.parse(input)
+
+    const { address } = await dns.lookup(parsed.hostname, {
+        family: 4
     })
 
-    // get all the tabs
-    const page = await browser.pages()
-
-    // return the first tab that is opened by default
-    // by Chromium browser
-    return page[0]
+    return `${parsed.protocol}//${address}:${parsed.port}`
 }
 
-export const close = async () => await browser.close()
+export const start = async () => {
+    const { CHROME_DEVTOOLS_URL } = process.env
+
+    // create a new browser instance
+    const browser = await puppeteer.connect({
+        browserURL: await resolveIP(CHROME_DEVTOOLS_URL),
+        defaultViewport: {
+            width: 1500,
+            height: 500
+        }
+    })
+
+    // open a new page and return it
+    return await browser.newPage()
+}
+
+export const close = async (page) => await page.close()

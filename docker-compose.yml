@@ -18,6 +18,9 @@ services:
         image: vsnthdev/twitter-banner:latest
         container_name: twitter-banner
         restart: always
+        volumes:
+            - /etc/timezone:/etc/timezone:ro
+            - /etc/localtime:/etc/localtime:ro
         environment:
             TWITTER_USERNAME: vsnthdev
             NO_FOLLOWERS: 5
