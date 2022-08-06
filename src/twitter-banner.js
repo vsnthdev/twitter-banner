@@ -2,7 +2,9 @@
  *  Entry executable file for twitter-banner project.
  *  Created On 25 December 2021
  */
+
 import dotenv from 'dotenv'
+import { scheduleJob } from "node-schedule"
 
 import getFollowerImages, { twitter } from './01-getFollowerImages.js'
 import { close, start } from './02-browser.js'
@@ -17,33 +19,46 @@ const env = process.env.NODE_ENV || 'development'
 // load the .env file
 if (env == 'development') dotenv.config()
 
-// fetch images of the latest followers from Twitter's API
-const images = await getFollowerImages()
+const main = async () => {
+    // fetch images of the latest followers from Twitter's API
+    const images = await getFollowerImages()
 
-// create a new browser instance
-const page = await start(env)
+    // create a new browser instance
+    const page = await start(env)
 
-// inject the background image
-await injectBackgroundImage(page)
+    // inject the background image
+    await injectBackgroundImage(page)
 
-// inject images into our document
-await injectImages(page, images)
+    // inject images into our document
+    await injectImages(page, images)
 
-// inject the styles into our document
-const tag = await injectStyles(page)
+    // inject the styles into our document
+    const tag = await injectStyles(page)
 
-// we just show these during development
+    // we just show these during development
+    if (env == 'production') {
+        // take a screenshot & close the browser
+        const banner = await takeScreenshot(page)
+        await close()
+
+        // upload it on Twitter, if ran during production
+        await publishBanner(twitter, banner)
+    } else {
+        // dynamically import the dev js
+        const { default: dev } = await import('./dev.js')
+
+        // attach the css watcher functionality
+        await dev(tag)
+    }
+}
+
+const schedule = () => {
+    main()
+    scheduleJob(process.env.UPDATE_INTERVAL, main)
+}
+
 if (env == 'production') {
-    // take a screenshot & close the browser
-    const banner = await takeScreenshot(page)
-    await close()
-
-    // upload it on Twitter, if ran during production
-    await publishBanner(twitter, banner)
+    schedule()
 } else {
-    // dynamically import the dev js
-    const { default: dev } = await import('./dev.js')
-
-    // attach the css watcher functionality
-    await dev(tag)
+    main()
 }

@@ -25,6 +25,7 @@
     "dependencies": {
         "@vsnthdev/utilities-node": "^2.0.1",
         "es-dirname": "^0.1.0",
+        "node-schedule": "^2.1.0",
         "puppeteer": "^16.0.0",
         "twitter-api-client": "^1.6.0"
     },
